@@ -1,0 +1,109 @@
+<?php
+	//start session for logged in user
+	session_start();
+
+	//redirect to login page if user is not logged in
+	if(!isset($_SESSION['loggedin'])){
+		header('Location: index.html');
+		exit;
+	}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+			x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
+	</script>
+	<!--scale page based on size of device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--style link for hamburger menu-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<head>
+		<title>Yeehaws &amp Pokes | Sell an Item</title>
+		<link href="styles/style.css" type="text/css" rel="stylesheet"/>
+	</head>
+	
+	<!-- Navigation bar -->
+	<nav>
+		<div class="topnav" id="myTopnav">
+			<a href="home.php">Home</a>
+			<a href="books.php">Books</a>
+			<a href="electronics.php">Electronics</a>
+			<a href="office.php">Office Supplies</a>
+			<a href="homedecor.php">Home Decor</a>
+			<a href="misc.php">Miscellaneous</a>
+			<a href="profile.php">Profile</a>
+			<a href="listItem.html">Sell</a>
+			<a href="logout.php">Logout</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+	</nav>
+	
+	<body>
+		<div class="header">
+			<h1>Yeehaws &amp Pokes</h1>
+			<h2>Add Item</h2>
+		</div>
+			
+			
+		<div class="listFormContainer">
+			<form class="list" enctype="multipart/form-data" action="insert.php" method="post">
+				<fieldset>
+					<aside>
+						<p>Add an Image</p>
+						<input type="file" required="required" name="itemImage"/>
+					</aside>
+					
+					<div>
+						<p>Username (Example: email is msu-jsmith@mcneese.edu, username is msu-jsmith)</p>
+						<input type="text"  maxlength="50" required="required" name="user"/>
+
+						<p>Title</p>
+						<input type="text"  maxlength="200" required="required" name="title"/>
+						
+                        <p>Price (Correct: 12.50, Wrong: $12.50)</p>
+						<input type="text"  maxlength="80" required="required" name="price"/>
+						
+						<p>Condition</p>
+						<select required="required" name="condition">
+							<option>Select</option>
+							<option>New</option>
+							<option>Like New</option>
+							<option>Used</option>
+						</select>
+						
+						<p>Category</p>
+						<select required="required" name="category">
+							<option>Select</option>
+							<option value="books">Books &amp Textbooks</option>
+							<option value="electronics">Electronics</option>
+							<option value="office">Office Supply</option>
+							<option value="home">Home &amp Decor</option>
+							<option value="misc">Other</option>
+						</select>
+						
+						<p>Description (Explain how you would prefer to be contacted or any other information you would like to provide about your item)</p>
+						<textarea rows="6" cols="45" required="required" name="description"></textarea>
+					</div>
+					
+					<br/>
+					<input type="submit" name="submit" value="List My Item!"/>
+					<?php if(!empty($message) { ?>
+					<br/><font color="#ff0000"><?=$message?></font>
+					<?php }) ?>
+					
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>

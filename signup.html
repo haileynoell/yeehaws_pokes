@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yeehaws &amp Pokes | Sign Up&excl;</title>
+		<link href="styles/styles.css" type="text/css" rel="stylesheet"/>
+	</head>
+	
+	<body>
+		<div class="form">
+			<div class="login-header">
+				<h1>Yeehaws &amp Pokes</h1>
+			</div>
+			
+			<form class="signup-form" action="addUser.php" method="POST">
+				<label for="first_name">First Name: </label>
+				<input name="first_name" id="first_name" type="text"  maxlength="120" required="required"/>
+				<br/>
+
+				<label for="last_name">Last Name: </label>
+				<input name="last_name" id="last_name" type="text"  maxlength="120" required="required"/>
+				<br/>
+				
+				<label for="userame">Create Username: </label>
+				<input name="username" id="username" type="text"  maxlength="120" required="required"/>
+				<br/>
+				
+				<label for="password">Create Password: </label>
+				<input type="password" name="password" maxlength="20" required="required"/>
+				<br/>
+				
+				<label for="email">Enter Email: </label>
+				<input type="email" name="email" id="email" type="text"  maxlength="120" required="required"/>
+				
+				<input type="submit" name="submit" value="Create Account!"/>
+			</form>
+		</div>
+		
+	</body>
+	
+	<footer>
+	</footer>
+</html>

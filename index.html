@@ -1,0 +1,61 @@
+<!--Yeehaws & Pokes-->
+<!--Last edited: 04(April)/25/2021-->
+<!--Developed by Hailey Hanson, Brandon Hawkins-->
+
+<!--Login Page-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+			x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
+	</script>
+	
+	<!--scale page based on size of device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!--style link for hamburger menu-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<head>
+		<title>Yeehaws &amp Pokes | Login</title>
+		<link href="styles/styles.css" type="text/css" rel="stylesheet"/>
+	</head>
+	
+	<body>
+		<div class="login-page">
+			<div class="form">
+				<div class="login-header">
+					<h1>Yeehaws &amp Pokes</h1>
+				</div>
+				
+				<form class="login-form" action="authenticate.php" method="POST">
+					<label for="username">Username: </label>
+					<input name="username" id="username" type="text"  maxlength="50" required="required"/>
+					<br/>
+					
+					<label for="password">Password: </label>
+					<input type="password" id="password" name="password" maxlength="20" required="required"/>
+					<br/>
+					
+					<input type="submit" name="submit" value="Let's Geaux!"/>
+				</form>
+				
+				<div class="login-footer">
+					<!-- <a href="forgotpassword.html" target="_self" id="forgot">Forgot username/password</a><br> -->
+					<a href="signup.html" target="_self" id="signup">Sign-up/Register</a>
+				</div>
+			</div>
+		
+		</div>
+	</body>
+	
+	<footer>
+	</footer>
+</html>
